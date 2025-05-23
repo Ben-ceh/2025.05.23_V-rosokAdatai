@@ -92,20 +92,31 @@ namespace MagyarországVárosai
                 tbx_kereses.Clear();
                 MessageBox.Show("Nincs a keresésednek megfelelő elem!","Hiba!",MessageBoxButton.OK,MessageBoxImage.Warning);
             }
-            if (tbx_kereses.Text!="")
+            if (tbx_kereses.Text != "")
             {
                 lb_Varosok.Items.Clear();
-                lb_Varosok.ItemsSource = keresettVarosok;
+                //lb_Varosok.ItemsSource = keresettVarosok;
+                foreach (var item in keresettVarosok)
+                {
+                    lb_Varosok.Items.Add(item);
+                }
                 tbx_kereses.Clear();
             }
-            //lb_Varosok.Items.Clear();
 
-            //foreach (var item in keresettVarosok)
-            //{
-            //    lb_Varosok.Items.Add(item);
-            //}
-            //lb_Varosok.ItemsSource = keresettVarosok;
+          
+            
 
+        }
+
+        private void btn_ujKeres_Click(object sender, RoutedEventArgs e)
+        {
+            lb_Varosok.SelectedItem = null;
+            lb_Varosok.Items.Clear();
+            
+            foreach (var item in varosok)
+            {
+                lb_Varosok.Items.Add(item.Varosnev.ToString());
+            }
         }
     }
 }

@@ -45,7 +45,7 @@
                HorizontalAlignment="Center"
                FontSize="20"
                FontWeight="Bold"
-               Margin="-240 -115 0 0"
+               Margin="-240 -155 0 0"
                Panel.ZIndex="0"
                Background="Gainsboro"
                Width="auto"/>
@@ -61,12 +61,22 @@
                 Panel.ZIndex="0">
             <StackPanel Orientation="Vertical"
                         >
-                <TextBox x:Name="tbx_kereses"/>
+                <TextBox x:Name="tbx_kereses"
+                         Margin="6"/>
                 <Button Background="DarkGoldenrod"
                     x:Name="btn_keres"
                         Content="Keres"
                         Margin="6"
-                        Click="btn_keres_Click"/>
+                        Click="btn_keres_Click"
+                        FontWeight="Bold"
+                        Foreground="White"/>
+                <Button Background="#FF866209"
+                    x:Name="btn_ujKeres"
+                        Content="Új Keresés"
+                        Margin="6"
+                        Click="btn_ujKeres_Click"
+                        FontWeight="Bold"
+                        Foreground="White"/>
             </StackPanel >
         </Border>
         <Label Content="Városadatok"
