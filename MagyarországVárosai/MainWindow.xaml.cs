@@ -30,19 +30,27 @@ namespace MagyarországVárosai
 
         private void lb_Varosok_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string kivalaszt = lb_Varosok.SelectedItem.ToString();
-            foreach (var item in varosok)
+            if (lb_Varosok.SelectedItem==null)
             {
-                if (item.Varosnev == kivalaszt)
+                return;
+            }
+            else
+            {
+                string kivalaszt = lb_Varosok.SelectedItem.ToString();
+                foreach (var item in varosok)
                 {
-                    tbl_nev.Text = $"Város: {item.Varosnev}";
-                    tbl_jaras.Text = $"Járás: {item.Jaras}";
-                    tbl_kisterseg.Text = $"Kistérség: {item.Kisterseg}";
-                    tbl_nepesseg.Text = $"Népesség: {item.Nepesseg}";
-                    tbl_terulet.Text = $"Terület: {item.Terulet}";
-                    
+                    if (item.Varosnev == kivalaszt)
+                    {
+                        tbl_nev.Text = $"Város: {item.Varosnev}";
+                        tbl_jaras.Text = $"Járás: {item.Jaras}";
+                        tbl_kisterseg.Text = $"Kistérség: {item.Kisterseg}";
+                        tbl_nepesseg.Text = $"Népesség: {item.Nepesseg}";
+                        tbl_terulet.Text = $"Terület: {item.Terulet}";
+
+                    }
                 }
             }
+            
         }
         private void Fajlbeolvas()
         {

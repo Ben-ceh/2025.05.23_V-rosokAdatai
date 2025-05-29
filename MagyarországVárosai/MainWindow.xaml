@@ -69,7 +69,8 @@
                         Margin="6"
                         Click="btn_keres_Click"
                         FontWeight="Bold"
-                        Foreground="White"/>
+                        Foreground="White"
+                        ClickMode="Press"/>
                 <Button Background="#FF866209"
                     x:Name="btn_ujKeres"
                         Content="Új Keresés"
